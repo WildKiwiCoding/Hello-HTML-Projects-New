@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anna Dowlin</title>
+    <style>
+        body {
+            text-align: center;
+            background: black;
+            background-size: cover;
+            background-position: center;
+            color: white;
+            font-family: Helvetica, sans-serif;
+        }
+        p {
+            font-size: 22px;
+        }
+        input {
+            border: 0;
+            padding: 10px;
+            font-size: 18px;
+        }
+        #videoContainer {
+            display: none;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        iframe {
+            pointer-events: none; /* Disables user interaction */
+        }
+    </style>
+</head>
+<body>
+
+    <p>Hello HTML Project</p>
+    <input type="email" placeholder="Your Name">
+    
+    <button onclick="showVideo()">Say Hello</button>
+
+    <div id="videoContainer">
+        <iframe id="videoFrame" width="560" height="315" 
+    src="https://www.youtube.com/embed/_Em1C9wb0fY?si=tZx0t-hn7usQrzxd&autoplay=1&modestbranding=1&showinfo=0&controls=0&rel=0"
+    title="YouTube video player" frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+    </div>
+
+    <script>
+        function showVideo() {
+            var videoContainer = document.getElementById("videoContainer");
+            var videoFrame = document.getElementById("videoFrame");
+
+            videoContainer.style.display = "block";
+            videoFrame.src += "&autoplay=1";
+
+            // Prevent iframe interactions
+            videoFrame.style.pointerEvents = "none";
+        }
+    </script>
+
+</body>
+</html>
